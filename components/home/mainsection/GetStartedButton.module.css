@@ -1,0 +1,44 @@
+.divButton{
+  position: absolute;
+  left: 0%;
+  bottom:5%;
+}
+
+.button__main {
+  height: 80px;
+  width: 401px;
+  left: 233px;
+  top: 841px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  position: relative;
+  top: 80%;
+  left: 180px;
+}
+
+.button__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  /* background-color: #5b10a8; */
+  background: linear-gradient(90deg, #B638FF 0%, #6600CB 100%);
+}
+
+.buttondesc__main {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 40px;
+  /* color: #5b10a8; */
+  color:linear-gradient(90deg, #B638FF 0%, #6600CB 100%);
+  position: absolute;
+  left: 15%;
+  top: 25%;
+  /* background: linear-gradient(90deg, #B638FF 0%, #6600CB 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}

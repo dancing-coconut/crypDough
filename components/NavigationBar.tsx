@@ -1,7 +1,7 @@
 import Logo from "./home/Logo";
 import Item from "./home/Item";
 import Link from "next/link";
-
+import styles from "./NavigationBar.module.css"
 interface Props {
   bgcolor: string;
   itemcolor: string;
@@ -13,9 +13,9 @@ interface Props {
 
 function Profilenavbar(props: Props) {
   return (
-    <div style={{ background: props.bgcolor }} className="menu__items--div">
+    <div style={{ background: props.bgcolor }} className={styles["menu__items--div"]}>
       <Logo color={props.itemcolor} />
-      <div className="menu__items--container">
+      <div className={styles["menu__items--container"]}>
         <Link href="">
           <Item
             color={props.itemcolor}
@@ -59,9 +59,9 @@ function Normalnavbar(props) {
   return (
     <div style={{ background: props.bgcolor, height: "72px" }}>
       <Logo color={props.itemcolor} />
-      <ul className="MenuOptions">
+      <ul className={styles["MenuOptions"]}>
         <Link href="/ProfilePage">
-          <li className="item1">
+          <li className={styles["item1"]}>
             <Item
               color={props.itemcolor}
               option="Profile"
@@ -72,7 +72,7 @@ function Normalnavbar(props) {
           </li>
         </Link>
         <Link href="">
-          <li className="item2">
+          <li className={styles["item2"]}>
             <Item
               color={props.itemcolor}
               option="Contact"
@@ -83,7 +83,7 @@ function Normalnavbar(props) {
           </li>
         </Link>
         <Link href="">
-          <li className="item3">
+          <li className={styles["item3"]}>
             <Item
               scrollExplore={props.scrollExplore}
               scroll={props.scroll}
