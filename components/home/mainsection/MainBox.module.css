@@ -1,0 +1,36 @@
+.MainContainer {
+  position: relative;
+}
+
+.title__main {
+  /*learn*/
+  font-size: 100px;
+  line-height: 181px;
+  color: #ffffff;
+  position: absolute;
+  top: 0px;
+  left: 40px;
+}
+
+.mainsection__image {
+  display: inline-block;
+  height: 90vh;
+  width: 55%;
+  position: relative;
+  top: 10%;
+  left: 1%;
+}
+
+.description__main {
+  /*cryptocurr,bitcoin*/
+  font-size: 50px;
+  line-height: 80.64px;
+  color: #ffffff;
+  position: absolute;
+  top: 130px;
+  left: 40px;
+}
+
+
+
+
