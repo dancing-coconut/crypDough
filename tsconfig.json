@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "importHelpers": true,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -15,6 +16,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx","additional.d.ts", "components/home/exploresection/ExploreBoxContent.js"],
   "exclude": ["node_modules"]
 }
