@@ -1,19 +1,19 @@
 import React from "react";
-
+import styles from "./Login.module.css"
 interface Props{
   
 }
 
 function Login(props:Props) {
   return (
-    <div className="login-content">
-      <form className="login">
-        <h1 className="login-title">Login</h1>
-        <div className="login-input">
+    <div className={styles["login-content"]}>
+      <form className={styles["login"]}>
+        <h1 className={styles["login-title"]}>Login</h1>
+        <div className={styles["login-input"]}>
           <input
             type="email"
             id="email"
-            className="login-input"
+            className={styles["login-input"]}
             placeholder="Enter your e-mail"
           />
         </div>
@@ -21,11 +21,11 @@ function Login(props:Props) {
           <input
             type="password"
             id="password"
-            className="login-input"
+            className={styles["login-input"]}
             placeholder="Enter your password"
           />
         </div>
-        <button className="login-button" type="button">Login</button>
+        <button className={styles["login-button"]} type="button">Login</button>
       </form>
     </div>
   );

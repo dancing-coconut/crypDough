@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
+import styles from "./Item.module.css";
 
 const Item: React.FC<{
   scroll: string;
@@ -48,7 +49,7 @@ const Item: React.FC<{
         onMouseOver={changeHoverState}
         onMouseOut={changeHoverStateBack}
         onClick={OnClickHandler}
-        className="title__menu"
+        className={styles["title__menu"]}
       >
         {props.option}
       </p>

@@ -6,6 +6,7 @@ import CompareIcon from "@mui/icons-material/Compare"; //compare cyptocurr
 import TrendingUpIcon from "@mui/icons-material/TrendingUp"; //track your progress
 import ImportContactsIcon from "@mui/icons-material/ImportContacts"; //learn crypto
 import { useSpring, animated } from "react-spring";
+import styles from "./ExploreBox.module.css";
 
 const iconStyles = {
   otherIcons: {
@@ -58,7 +59,7 @@ function ExploreBoxes(props) {
         transform: props2.xys.to(perspective),
         backgroundColor: props.color,
       }}
-      className="exploreBox__div"
+      className={styles["exploreBox__div"]}
       onMouseMove={({ clientX: x, clientY: y }) =>
         set.start({ xys: calcXY(x, y) })
       }
@@ -67,8 +68,8 @@ function ExploreBoxes(props) {
       <Link href={path}>
         <>
           {icon(props.logo)}
-          <p className="exploreBoxTitle">{props.feature}</p>
-          <p className="exploreBoxText">{props.desc}</p>
+          <p className={styles["exploreBoxTitle"]}>{props.feature}</p>
+          <p className={styles["exploreBoxText"]}>{props.desc}</p>
         </>
       </Link>
     </animated.div>

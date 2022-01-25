@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useMeasure from "react-use-measure";
 import { useSpring, animated } from "@react-spring/web";
-
+import styles from "./GetStartedButton.module.css"
 interface Props{
   onClickOpenModal:()=>null;
 }
@@ -12,17 +12,17 @@ function GetStartedButton(props:Props) {
   const props1 = useSpring({config:{friction:35},to:{width: open ? width : 0 }});
 
   return (
-    <div className="divButton">
+    <div className={styles["divButton"]}>
       <div
         ref={ref}
-        className="button__main"
+        className={styles["button__main"]}
         onClick={()=>props.onClickOpenModal()}
         onMouseOver={() => toggle(true)}
         onMouseOut={() => toggle(false)}
       >
-        <animated.div className="button__fill" style={props1} />
+        <animated.div className={styles["button__fill"]} style={props1} />
         <p
-          className="buttondesc__main"
+          className={styles["buttondesc__main"]}
           style={{ color: open ? "white" : "#5b10a8" }}
         >
           Get Started Now

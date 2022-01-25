@@ -1,0 +1,10 @@
+.WholeLogo {
+  display: inline-block;
+}
+.pic__logo {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  left: 15px;
+  border-radius: 50%;
+}
