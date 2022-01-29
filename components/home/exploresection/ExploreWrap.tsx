@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import ExploreBox from "./ExploreBox";
 import ExploreBoxContents from "./ExploreBoxContent.js";
 import styles from "./ExploreWrap.module.css";
@@ -19,8 +19,9 @@ function addExploreBox(boxContent) {
 function ExploreSection(props) {
   const myref = useRef<HTMLDivElement>(null);
 
-  if (props.toScroll === true) {
-    myref.current?.scrollIntoView();
+  if (props.toScroll) {
+    myref.current?.scrollIntoView({ behavior: "smooth" });
+    console.log("sds", props.toScroll);
   }
 
   return (

@@ -49,3 +49,10 @@
   margin-top: 2vh;
   font-size: 13px;
 }
+
+.ReactModal__Content {
+  position: absolute;
+  width: 40%;
+  margin-left: 27%;
+  z-index: 1;
+}

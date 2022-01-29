@@ -15,6 +15,7 @@ const Item: React.FC<{
   option: string;
 }> = (props) => {
   const OnClickHandler = () => {
+    console.log(props.scrollBlogs);
     if (props.scroll === "ExploreSection") {
       props.scrollExplore();
     } else if (props.scroll === "BlogsSection") {
@@ -44,7 +45,6 @@ const Item: React.FC<{
         style={{
           color: isHover ? hoverTextColor : textColor,
           background: isHover ? hoverbackgroundColor : backgroundColor1,
-          height: "72px",
         }}
         onMouseOver={changeHoverState}
         onMouseOut={changeHoverStateBack}

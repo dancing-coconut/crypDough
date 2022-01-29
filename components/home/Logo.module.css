@@ -1,10 +1,27 @@
 .WholeLogo {
-  display: inline-block;
+  display: flex;
+  position: absolute;
+  left: 15px;
+  top: 5px;
+  width: 200px;
 }
+
+.title__logo {
+  font-size: 36px;
+  line-height: 45px; 
+  color: #5b10a8;
+  font-family: Sora;
+  position: relative;
+  align-self: center;
+  left: 10px;
+  float: right;
+  margin: 0;
+}
+
 .pic__logo {
   width: 60px;
   height: 60px;
   position: relative;
-  left: 15px;
+  /* left: 15px; */
   border-radius: 50%;
 }

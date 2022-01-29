@@ -1,10 +1,12 @@
-import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import Modal from "react-modal";
 import Login from "./Login";
 import styles from "./SignUp.module.css";
 
 function Signup(props) {
-  const [modalIsOpen, setmodalIsOpen] = useState<boolean>(false);
+  const [focuspassword, setFocusStatePassword] = useState<boolean>(false);
 
   const emailInputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     console.log(event.target.value);
@@ -40,6 +42,10 @@ function Signup(props) {
             id="password"
             className={styles["form-input"]}
             placeholder="Enter your password"
+            readOnly={!focuspassword}
+            onFocus={() => {
+              setFocusStatePassword(true);
+            }}
           />
         </div>
         <div className={styles["form-input"]}>
@@ -48,26 +54,25 @@ function Signup(props) {
             id="conf-password"
             className={styles["form-input"]}
             placeholder="Re-enter your password"
+            readOnly={!focuspassword}
+            onFocus={() => {
+              setFocusStatePassword(true);
+            }}
           />
         </div>
         <button className={styles["register-button"]}>Sign Up</button>
         <div className={styles["form-login"]}>
           Already have an account? Login{" "}
           <span
-            style={{ color: "#5B10A7" }}
             href="#"
-            onClick={() => setmodalIsOpen(true)}
+            style={{ color: "#5B10A7" }}
+            onClick={() => {
+              props.modalController(true);
+            }}
           >
             here
           </span>
         </div>
-        <Modal
-          appElement={document.getElementById("root") || undefined}
-          isOpen={modalIsOpen}
-          onRequestClose={() => setmodalIsOpen(false)}
-        >
-          <Login />
-        </Modal>
       </form>
     </div>
   );

@@ -1,7 +1,7 @@
 import Logo from "./home/Logo";
 import Item from "./home/Item";
 import Link from "next/link";
-import styles from "./NavigationBar.module.css"
+import styles from "./NavigationBar.module.css";
 interface Props {
   bgcolor: string;
   itemcolor: string;
@@ -9,11 +9,15 @@ interface Props {
   scrollBlogs: () => null;
   scroll: string;
   hoverbgcolor: string;
+  scrollExplore:()=>void;
 }
 
 function Profilenavbar(props: Props) {
   return (
-    <div style={{ background: props.bgcolor }} className={styles["menu__items--div"]}>
+    <div
+      style={{ background: props.bgcolor }}
+      className={styles["menu__items--div"]}
+    >
       <Logo color={props.itemcolor} />
       <div className={styles["menu__items--container"]}>
         <Link href="">
@@ -55,16 +59,18 @@ function Profilenavbar(props: Props) {
   );
 }
 
-function Normalnavbar(props) {
+function Normalnavbar(props: Props) {
   return (
-    <div style={{ background: props.bgcolor, height: "72px" }}>
+    <div className={styles["main__navbar"]} style={{ background: props.bgcolor, height: "72px" }}>
       <Logo color={props.itemcolor} />
       <ul className={styles["MenuOptions"]}>
-        <Link href="/ProfilePage">
-          <li className={styles["item1"]}>
+        <Link href="">
+          <li className={styles["item3"]}>
             <Item
+              scrollExplore={props.scrollExplore}
+              scroll={props.scroll}
               color={props.itemcolor}
-              option="Profile"
+              option="Explore"
               bgcolor={props.bgcolor}
               hovercolor={props.hovercolor}
               hoverbgcolor={props.hoverbgcolor}
@@ -82,13 +88,11 @@ function Normalnavbar(props) {
             />
           </li>
         </Link>
-        <Link href="">
-          <li className={styles["item3"]}>
+        <Link href="/ProfilePage">
+          <li className={styles["item1"]}>
             <Item
-              scrollExplore={props.scrollExplore}
-              scroll={props.scroll}
               color={props.itemcolor}
-              option="Explore"
+              option="Profile"
               bgcolor={props.bgcolor}
               hovercolor={props.hovercolor}
               hoverbgcolor={props.hoverbgcolor}
@@ -100,7 +104,7 @@ function Normalnavbar(props) {
   );
 }
 
-function NavigationBar(props) {
+function NavigationBar(props: Props) {
   if (props.navtype === "profile") {
     return (
       <Profilenavbar

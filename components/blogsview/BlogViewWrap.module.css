@@ -20,3 +20,9 @@
     display: flex;
     flex-direction: row;
   }
+  .Plus__button{
+    color: white;
+    position: absolute;
+    right: 1.5vw;
+    top:0.5vh;
+  }

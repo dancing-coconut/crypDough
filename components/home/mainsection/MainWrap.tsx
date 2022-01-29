@@ -5,14 +5,14 @@ import styles from "./MainWrap.module.css";
 import NavigationBar from "../../NavigationBar";
 
 interface Props {
-  exploreScrollFunc: () => void;
+  scrollExplore: () => void;
 }
 
 const MainWrap = (props: Props) => {
   return (
     <>
       <NavigationBar
-        scrollExplore={props.exploreScrollFunc}
+        scrollExplore={props.scrollExplore}
         scroll={"ExploreSection"}
         itemcolor="#5B10A8"
         bgcolor="#FFFFFF"

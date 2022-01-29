@@ -4,21 +4,21 @@ import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
 export default NextAuth({
   // Configure one or more authentication providers
+  secret: process.env.SECRET,
   providers: [
+    FacebookProvider({
+      clientId: process.env.FACEBOOK_ID,
+      clientSecret: process.env.FACEBOOK_SECRET,
+    }),
     GithubProvider({
-      clientId: "d77ef06a55dfb069e226",
-      clientSecret: "331b7e59e47f9b271f86d09c558946f69c9cda93",
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
+      // @ts-ignore
+      scope: "read:user",
     }),
     GoogleProvider({
-      clientId: "1037563317624-teahggjmq2133sjel5vigih8r7q08q6j.apps.googleusercontent.com",
-      clientSecret: "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",
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
     }),
-    FacebookProvider({
-      clientId: "1362444754226887",
-      clientSecret: "203c97736e4d6dd8dce795b023b1a1c7",
-      // clientId: process.env.FACEBOOK_CLIENT_ID,
-      // clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-    }),
-    // ...add more providers here
   ],
 });

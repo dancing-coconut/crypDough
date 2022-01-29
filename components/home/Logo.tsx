@@ -11,8 +11,8 @@ const Logo = (props: Props) => {
   return (
     <Link href="/">
       <div className={styles["WholeLogo"]}>
-        {/* <img className={styles["pic__logo"]} src="/WebsiteLogo.png" alt="Logo" /> */}
-        <h3 style={{ color: props.color }} className="title__logo">
+        <img className={styles["pic__logo"]} src="/WebsiteLogo.png" alt="Logo" />
+        <h3 style={{ color: props.color }} className={styles["title__logo"]}>
           Bitcoin
         </h3>
       </div>

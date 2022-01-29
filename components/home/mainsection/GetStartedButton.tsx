@@ -3,7 +3,7 @@ import useMeasure from "react-use-measure";
 import { useSpring, animated } from "@react-spring/web";
 import styles from "./GetStartedButton.module.css"
 interface Props{
-  onClickOpenModal:()=>null;
+  onClickOpenModal:(value)=>void;
 }
 
 function GetStartedButton(props:Props) {
@@ -16,7 +16,7 @@ function GetStartedButton(props:Props) {
       <div
         ref={ref}
         className={styles["button__main"]}
-        onClick={()=>props.onClickOpenModal()}
+        onClick={()=>props.onClickOpenModal(true)}
         onMouseOver={() => toggle(true)}
         onMouseOut={() => toggle(false)}
       >

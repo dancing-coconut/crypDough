@@ -37,7 +37,8 @@
   color:linear-gradient(90deg, #B638FF 0%, #6600CB 100%);
   position: absolute;
   left: 15%;
-  top: 25%;
+  top:25%;
+  margin: 0px;
   /* background: linear-gradient(90deg, #B638FF 0%, #6600CB 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent; */

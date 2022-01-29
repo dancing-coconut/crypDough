@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./SubBox.module.css"
+import styles from "./SubBox.module.css";
 interface Props {
   pathtitle: string;
   title: string;
@@ -10,7 +10,6 @@ const SubBox = (props: Props) => {
   const classname = "subsection__";
   const classname3 = "subsectionImg__";
   const classname1 = "title__sub";
-  const classname2 = `title__sub ${classname1.concat(props.title)}`;
 
   const path = "/" + props.pathtitle;
   return (
@@ -21,7 +20,13 @@ const SubBox = (props: Props) => {
           src={props.bgUrl}
           alt={props.alt}
         />
-        <span className={styles[classname2]}>{props.title}</span>
+        <span
+          className={`${styles["title__sub"]} ${
+            styles[`${classname1.concat(props.title)}`]
+          }`}
+        >
+          {props.title}
+        </span>
       </div>
     </Link>
   );

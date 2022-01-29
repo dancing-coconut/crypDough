@@ -1,8 +1,10 @@
-import WriteBlog from "../../components/writeblog/WritePage";
+import WritePage from "../../components/writeblog/WritePage";
+import { useSession } from "next-auth/react";
+
 import type { NextPage } from "next";
 const PostPage: NextPage = () => {
-    return(
-        <WriteBlog />
-    );
+  const { data: session, status } = useSession();
+
+  return <WritePage email={session?.user?.email} />;
 };
 export default PostPage;

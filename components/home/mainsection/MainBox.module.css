@@ -9,7 +9,10 @@
   color: #ffffff;
   position: absolute;
   top: 0px;
+  margin: 0px;
   left: 40px;
+  font-weight: bold;
+  font-family: Sora;
 }
 
 .mainsection__image {
@@ -22,13 +25,14 @@
 }
 
 .description__main {
-  /*cryptocurr,bitcoin*/
+  /*cryptocurrency*/
   font-size: 50px;
-  line-height: 80.64px;
   color: #ffffff;
   position: absolute;
   top: 130px;
   left: 40px;
+  font-weight: bold;
+  font-family: Sora;
 }
 
 
