@@ -77,7 +77,7 @@ function Normalnavbar(props: Props) {
     >
       <Logo color={props.itemcolor} />
       <ul className={styles["MenuOptions"]}>
-        <Link href="/explore" passHref>
+        <Link href="#" passHref>
           <li className={styles["item3"]} style={{ cursor: "pointer" }}>
             <Item
               scrollExplore={props.scrollExplore}
@@ -90,11 +90,11 @@ function Normalnavbar(props: Props) {
             />
           </li>
         </Link>
-        <Link href="/contact" passHref>
+        <Link href="/blog" passHref>
           <li className={styles["item2"]} style={{ cursor: "pointer" }}>
             <Item
               color={props.itemcolor}
-              option="Contact"
+              option="Blogs"
               bgcolor={props.bgcolor}
               hovercolor={props.hovercolor}
               hoverbgcolor={props.hoverbgcolor}

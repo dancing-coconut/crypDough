@@ -2,25 +2,35 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import CommentIcon from "@mui/icons-material/Comment";
 import Image from "next/image";
-import styles from "./BlogViewSection.module.css"
-interface Props{
-	author:string;
-	date:string;
-	blogimg:string;
-	blogname:string;
-	blogdesc:string;
+import styles from "./BlogViewSection.module.css";
+interface Props {
+  author: string;
+  date: string;
+  blogimg: string;
+  blogname: string;
+  blogdesc: string;
 }
-function BlogSection(props:Props) {
+function BlogViewSection(props: Props) {
+  let date = new Date(
+    Date.parse(props.date.substring(0, 10).replace(/[-]/g, "/"))
+  );
+
   return (
     <div className={styles.Blog__box}>
       <div className={styles.Author__section}>
         <AccountCircleIcon className={styles.Account__icon} />
         <div className={styles.Author__details}>
           <h5 className={styles.Author__name}>{props.author}</h5>
-          <h6 className={styles.Blog__date}>{props.date}</h6>
+          <h6
+            className={styles.Blog__date}
+          >{`${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`}</h6>
         </div>
       </div>
-      <Image className={styles.Blog__img} src={props.blogimg} alt="Blog's Pictures" />
+      <img
+        className={styles.Blog__img}
+        src={props.blogimg}
+        alt="Blog's Pictures"
+      />
       <h3 className={styles.Blog__title}>{props.blogname}</h3>
       <p className={styles.Blog__desc}>{props.blogdesc}</p>
       <div className={styles.Blogopt__section}>
@@ -30,4 +40,4 @@ function BlogSection(props:Props) {
     </div>
   );
 }
-export default BlogSection;
+export default BlogViewSection;

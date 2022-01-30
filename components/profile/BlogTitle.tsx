@@ -5,7 +5,6 @@ interface Props {
   status: string;
 }
 function BlogTitle(props: Props) {
-  console.log(props.date.substring(0, 10));
   let date = new Date(
     Date.parse(props.date.substring(0, 10).replace(/[-]/g, "/"))
   );

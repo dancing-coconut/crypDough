@@ -1,25 +1,26 @@
 import { useEffect, useState } from "react";
 import NavigationBar from "../NavigationBar";
-import BlogSection from "./BlogViewSection";
+import BlogViewSection from "./BlogViewSection";
 import styles from "./BlogViewWrap.module.css";
-import AddIcon from '@mui/icons-material/Add';
-import Fab from '@mui/material/Fab';
-import Link from 'next/link'
+import AddIcon from "@mui/icons-material/Add";
+import Fab from "@mui/material/Fab";
+import Link from "next/link";
+
+import useSWR from "swr";
 
 function BlogViewWrap() {
+  // const { data, error } = useSWR('http://localhost:8000/api/v1/blogs')
+  // console.log(data,"from SWR");
   const [totalBlogs, setTotalBlogs] = useState<
     {
-      _id: string;
-      name: string;
-      email: string;
-      role: string;
-      active: boolean;
-      photo: string;
+      Blog_ID: string;
+      Blog_Content: string;
+      Author_Email: string;
+      Blog_Title: string;
+      Blog_Photo: string;
+      Blog_Date: string;
     }[]
-  >([
-    { _id: "", name: "", email: "", role: "", active: false, photo: "" },
-    { _id: "", name: "", email: "", role: "", active: false, photo: "" },
-  ]);
+  >([]);
 
   useEffect(() => {
     fetch(`http://localhost:8000/api/v1/blogs`)
@@ -43,23 +44,25 @@ function BlogViewWrap() {
         <div className={styles.Search__box}></div>
         <Link href="/writeblog" passHref>
           <Fab color="secondary" className={styles.Plus__button}>
-            <AddIcon/>
+            <AddIcon />
           </Fab>
         </Link>
       </div>
-      <div style={{ display: "flex" }} className={styles.Blog_Row}>
-        {totalBlogs.map((data) => {
-          return (
-            <BlogSection
-              date={data.Blog_Date}
-              author={data.Author_Email}
-              blogname={data.Blog_Title}
-              blogimg={data.Blog_Photo}
-              blogdesc={data.Blog_Content}
-              key={Math.random()}
-            />
-          );
-        })}
+      <div className={styles.Blog_Row}>
+        {totalBlogs
+          ? totalBlogs.map((data) => {
+              return (
+                <BlogViewSection
+                  date={data.Blog_Date}
+                  author={data.Author_Email}
+                  blogname={data.Blog_Title}
+                  blogimg={data.Blog_Photo}
+                  blogdesc={data.Blog_Content}
+                  key={data.Blog_ID}
+                />
+              );
+            })
+          : null}
       </div>
     </div>
   );

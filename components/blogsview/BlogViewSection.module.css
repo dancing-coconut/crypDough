@@ -38,8 +38,10 @@
     color: #5b10a8;
   }
   .Blog__box {
-    margin-top: 3vh;
-    margin-left: 2vw;
+    margin: 50px;
+    position: relative;
+    width: 40%;
+    height: 50vh;
   }
   .Author__section {
     margin-bottom: 2vh;

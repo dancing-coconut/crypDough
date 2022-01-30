@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import { useState } from "react";
 import ExploreWrap from "../components/home/exploresection/ExploreWrap";
 
@@ -15,6 +16,10 @@ const BlogPage: NextPage = () => {
 
   return (
     <div style={{ height: "1300px" }}>
+      <Head>
+        <title>CrypDough</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <MainWrap scrollExplore={scrollExplore} />
       <ExploreWrap
         toScroll={exploreScroll}

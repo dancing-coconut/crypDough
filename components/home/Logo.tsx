@@ -11,11 +11,14 @@ interface Props {
 const Logo = (props: Props) => {
   return (
     <Link href="/" passHref>
-      <div className={styles["WholeLogo"]}>
+      <div className={styles["WholeLogo"]} style={{ cursor: "pointer" }}>
         <div className={styles["pic__logo"]}>
           <Image className={styles["pic__logo"]} src={logoImage} alt="Logo" />
         </div>
-        <h3 style={{ color: props.color }} className={styles["title__logo"]}>
+        <h3
+          style={{ color: props.color}}
+          className={styles["title__logo"]}
+        >
           CrypDough
         </h3>
       </div>

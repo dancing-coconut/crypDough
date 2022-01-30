@@ -46,7 +46,7 @@ function ExploreBoxes(props) {
 
   let path = "";
   if (props.feature === "Blogs") {
-    path = `/BlogPage`;
+    path = `/blog`;
   } else if (props.feature === "Learn Cryptocurrency from A-Z") {
     path = `/InfoPage`;
   } else if (props.feature === "Track Your Progress") {
@@ -65,12 +65,12 @@ function ExploreBoxes(props) {
       }
       onMouseLeave={() => set.start({ xys: [0, 0, 1] })}
     >
-      <Link href={path}>
-        <>
+      <Link href="/blog">
+        <div style={{ cursor: "pointer" }}>
           {icon(props.logo)}
           <p className={styles["exploreBoxTitle"]}>{props.feature}</p>
           <p className={styles["exploreBoxText"]}>{props.desc}</p>
-        </>
+        </div>
       </Link>
     </animated.div>
   );
