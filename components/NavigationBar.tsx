@@ -21,7 +21,7 @@ function Profilenavbar(props: Props) {
       <Logo color={props.itemcolor} />
       <div className={styles["menu__items--container"]}>
         <ul className={styles["MenuOptions-profile"]}>
-          <Link href="">
+          <Link href="" passHref>
             <li className={styles[""]} style={{ cursor: "pointer" }}>
               <Item
                 color={props.itemcolor}
@@ -31,7 +31,7 @@ function Profilenavbar(props: Props) {
               />
             </li>
           </Link>
-          <Link href="">
+          <Link href="" passHref>
             <li className={styles[""]} style={{ cursor: "pointer" }}>
               <Item
                 scrollBlogs={props.scrollBlogs}
@@ -43,7 +43,7 @@ function Profilenavbar(props: Props) {
               />
             </li>
           </Link>
-          <Link href="">
+          <Link href="" passHref>
             <li className={styles[""]} style={{ cursor: "pointer" }}>
               <Item
                 color={props.itemcolor}
@@ -53,7 +53,7 @@ function Profilenavbar(props: Props) {
               />
             </li>
           </Link>
-          <Link href="">
+          <Link href="" passHref>
             <li className={styles[""]} style={{ cursor: "pointer" }}>
               <Item
                 color={props.itemcolor}

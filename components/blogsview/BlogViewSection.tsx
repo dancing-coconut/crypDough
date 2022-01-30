@@ -1,6 +1,7 @@
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import CommentIcon from "@mui/icons-material/Comment";
+import Image from "next/image";
 import styles from "./BlogViewSection.module.css"
 interface Props{
 	author:string;
@@ -19,7 +20,7 @@ function BlogSection(props:Props) {
           <h6 className={styles.Blog__date}>{props.date}</h6>
         </div>
       </div>
-      <img className={styles.Blog__img} src={props.blogimg} alt="Blog's Pictures" />
+      <Image className={styles.Blog__img} src={props.blogimg} alt="Blog's Pictures" />
       <h3 className={styles.Blog__title}>{props.blogname}</h3>
       <p className={styles.Blog__desc}>{props.blogdesc}</p>
       <div className={styles.Blogopt__section}>

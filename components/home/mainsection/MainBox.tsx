@@ -48,6 +48,7 @@ function MainBox(props: Props) {
           src={mainSectionImage}
           alt="Main"
           layout="fill"
+          priority
           placeholder="blur"
           blurDataURL={`data:image/svg+xml;base64,${toBase64(
             shimmer(700, 475)

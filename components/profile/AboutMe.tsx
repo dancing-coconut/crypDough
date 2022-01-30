@@ -56,23 +56,23 @@ function AboutMe() {
       <span className={styles["name__first"]}>First Name</span>
       <span className={styles["name__last"]}>Last Name</span>
       <div className={styles["aboutMe__icons"]}>
-        <Link href="/">
+        <Link href="/" passHref>
           <LinkedInIcon style={iconStyles.otherIcons} />
         </Link>
-        <Link href="/">
+        <Link href="/" passHref>
           <LocationOnIcon style={iconStyles.otherIcons} />
           {/* twitter */}
         </Link>
-        <Link href="/">
+        <Link href="/" passHref>
           <FacebookRoundedIcon style={iconStyles.otherIcons} />
         </Link>
-        <Link href="/">
+        <Link href="/" passHref>
           <MailIcon style={iconStyles.otherIcons} />
         </Link>
-        <Link href="/">
+        <Link href="/" passHref>
           <InstagramIcon style={iconStyles.otherIcons} />
         </Link>
-        <Link href="/">
+        <Link href="/" passHref>
           <GitHubIcon style={iconStyles.otherIcons} />
         </Link>
       </div>

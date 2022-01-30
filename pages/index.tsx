@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import { useState } from "react";
 import ExploreWrap from "../components/home/exploresection/ExploreWrap";
 
-import Link from "next/link";
 import MainWrap from "../components/home/mainsection/MainWrap";
 import styles from "./index.module.css";
 

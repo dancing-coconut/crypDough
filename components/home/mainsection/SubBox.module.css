@@ -39,6 +39,12 @@
   max-height: 100%;
 }
 
+.box-image__div {
+  position: relative;
+  width: 41.25vw;
+  height: 100%;
+}
+
 .title__sub {
   /*Subsection Title*/
   font-family: Sora;

@@ -10,7 +10,7 @@ interface Props {
 
 const Logo = (props: Props) => {
   return (
-    <Link href="/">
+    <Link href="/" passHref>
       <div className={styles["WholeLogo"]}>
         <div className={styles["pic__logo"]}>
           <Image className={styles["pic__logo"]} src={logoImage} alt="Logo" />

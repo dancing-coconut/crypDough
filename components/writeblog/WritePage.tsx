@@ -8,7 +8,7 @@ interface Props {
 
 function WritePage(props: Props) {
   const [blogNumber, setBlogNumber] = useState<number>(0);
-  const [hasSaved,setHasSaved] = useState<boolean>(false);
+  const [hasSaved, setHasSaved] = useState<boolean>(false);
   const TitleRef = useRef<HTMLInputElement>(null);
   const PostRef = useRef<HTMLTextAreaElement>(null);
 
@@ -24,13 +24,13 @@ function WritePage(props: Props) {
       .then((data) => {
         setBlogNumber(data.data.count);
       });
-  }, []);
+  }, [props.email]);
 
   const SaveHandler = (event: React.FormEvent) => {
     event.preventDefault();
     // console.log(TitleRef.current?.value, PostRef.current?.value);
     const post = {
-      blogNumber: blogNumber+1,
+      blogNumber: blogNumber + 1,
       title: TitleRef.current?.value,
       post: PostRef.current?.value,
       email: props.email,
@@ -58,7 +58,7 @@ function WritePage(props: Props) {
     event.preventDefault();
     console.log(TitleRef.current?.value, PostRef.current?.value);
     const post = {
-      blogNumber: blogNumber+1,
+      blogNumber: blogNumber + 1,
       title: TitleRef.current?.value,
       post: PostRef.current?.value,
       email: props.email,
