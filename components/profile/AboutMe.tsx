@@ -5,7 +5,10 @@ import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import MailIcon from "@mui/icons-material/Mail";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import styles from "./AboutMe.module.css";
+import Image from "next/image";
+import profilePic from "../../public/Images/BitcoinTrans.png";
 
 const iconStyles = {
   accountIcon: {
@@ -21,13 +24,13 @@ const iconStyles = {
 
 function AboutMe() {
   return (
-    <div className="aboutme__div">
+    <div className={styles["aboutme__div"]}>
       <AccountCircleIcon
         style={iconStyles.accountIcon}
-        className="aboutme__icon"
+        className={styles["aboutme__icon"]}
       />
-      <span className="aboutme__text">About Me</span>
-      <div className="aboutme__text--para">
+      <span className={styles["aboutme__text"]}>About Me</span>
+      <div className={styles["aboutme__text--para"]}>
         <span>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -38,31 +41,38 @@ function AboutMe() {
           culpa qui officia deserunt mollit anim id est laborum.
         </span>
       </div>
-      <img
-        className="profile__image"
-        src="/Images/BitcoinTrans.png"
-        alt="profile"
-      />
-      <span className="name__first">First Name</span>
-      <span className="name__last">Last Name</span>
-      <div className="aboutMe__icons">
-        <Link to="/">
+      <div className={styles["profile__image-maindiv"]}>
+        <div className={styles["profile__image-div"]}>
+        <Image
+          src={profilePic}
+          className={styles["profile__image"]}
+          alt="profile"
+          layout="fill"
+        />
+      </div>
+      </div>
+      
+
+      <span className={styles["name__first"]}>First Name</span>
+      <span className={styles["name__last"]}>Last Name</span>
+      <div className={styles["aboutMe__icons"]}>
+        <Link href="/">
           <LinkedInIcon style={iconStyles.otherIcons} />
         </Link>
-        <Link to="/">
+        <Link href="/">
           <LocationOnIcon style={iconStyles.otherIcons} />
           {/* twitter */}
         </Link>
-        <Link to="/">
+        <Link href="/">
           <FacebookRoundedIcon style={iconStyles.otherIcons} />
         </Link>
-        <Link to="/">
+        <Link href="/">
           <MailIcon style={iconStyles.otherIcons} />
         </Link>
-        <Link to="/">
+        <Link href="/">
           <InstagramIcon style={iconStyles.otherIcons} />
         </Link>
-        <Link to="/">
+        <Link href="/">
           <GitHubIcon style={iconStyles.otherIcons} />
         </Link>
       </div>

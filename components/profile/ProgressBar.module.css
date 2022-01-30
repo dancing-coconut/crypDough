@@ -1,0 +1,41 @@
+.myprogress__div {
+  position: relative;
+  background-color: #dcc4f5;
+  padding: 2%;
+  margin: 2.5% 2.5% 1.5% 2.5%;
+  border-radius: 15px;
+}
+.myprogress__text {
+  color: #5b10a8;
+  font-size: 40px;
+  position: relative;
+  bottom: 10px;
+  left: 5px;
+}
+.progressBar__div {
+  display: flex;
+  justify-content: space-between;
+  margin: 2% 5% 0 5%;
+}
+
+.progressBar__div__investments {
+  width: 300px;
+  position: relative;
+}
+
+.progressBar__div__transactions {
+  width: 300px;
+  position: relative;
+}
+
+.progressBar__div__mining {
+  width: 300px;
+  position: relative;
+}
+
+.progressBar__descText {
+  padding-top: 7%;
+  font-size: 35px;
+  color: #5b10a8;
+  text-align: center;
+}

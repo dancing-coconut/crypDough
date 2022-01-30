@@ -1,0 +1,64 @@
+  /* About Me Section */
+  .aboutme__div {
+    position: relative;
+    background-color: #dcc4f5;
+    padding: 2%;
+    /* margin: 2.5% 1.5% 1.5% 1.5%; */
+    margin: 2.5% 2.5% 1.5% 2.5%;
+    border-radius: 15px;
+    height: 400px;
+  }
+  
+  .aboutme__text {
+    color: #5b10a8;
+    font-size: 40px;
+    position: relative;
+    bottom: 10px;
+    left: 5px;
+  }
+  .profile__image-maindiv{
+    position: absolute;
+    top: 30px;
+    right:20%;
+  }
+  .profile__image-div{
+    width: 250px;
+    height: 250px;
+    position: relative;
+    left: 78%;
+    bottom: 65%;
+  }
+  .profile__image {
+    display: inline-block;
+    border-radius: 100%;
+    position: absolute;
+  }
+  
+  .aboutme__text--para {
+    position: relative;
+    top: 20px;
+    left: 10px;
+    width: 900px;
+    font-size: 22px;
+  }
+  
+  .name__first {
+    font-size: 25px;
+    position: absolute;
+    right: 10%;
+    top: 75%;
+    color: #5b10a8;
+  }
+  
+  .name__last {
+    font-size: 25px;
+    position: absolute;
+    right: 10%;
+    top: 83%;
+    color: #5b10a8;
+  }
+  
+  .aboutMe__icons {
+    position: absolute;
+    bottom: 10%;
+  }

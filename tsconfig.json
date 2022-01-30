@@ -16,6 +16,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx","additional.d.ts", "components/home/exploresection/ExploreBoxContent.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx","additional.d.ts", "components/home/exploresection/ExploreBoxContent.js", "components/profile/MapMyBlogInfo.js"],
   "exclude": ["node_modules"]
 }

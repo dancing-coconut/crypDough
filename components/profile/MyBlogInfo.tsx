@@ -1,17 +1,22 @@
 import BlogTitle from "./BlogTitle";
 import DescriptionSharpIcon from "@mui/icons-material/DescriptionSharp";
-import myblogsinfo from "./MyBlogInfo";
-interface MyBlogInfo{
-  id:number;
-  title:string;
-  date:string;
+// import myblogsinfo from "./MapMyBlogInfo";
+import styles from "./MyBlogInfo.module.css";
+import { useEffect, useState } from "react";
+interface addMyBlogsBox {
+  Blog_ID: number;
+  Blog_Title: string;
+  Blog_Date: string;
+  blog_status: string;
 }
-function addMyBlogsBox(mybloginfo:MyBlogInfo) {
+
+function addMyBlogsBox(mybloginfo) {
   return (
     <BlogTitle
-      key={mybloginfo.id}
-      titleName={mybloginfo.title}
-      date={mybloginfo.date}
+      key={mybloginfo.Blog_ID}
+      titleName={mybloginfo.Blog_Title}
+      date={mybloginfo.Blog_Date}
+      status={mybloginfo.blog_status}
     />
   );
 }
@@ -23,14 +28,41 @@ const iconStyles = {
   },
 };
 
-function MyBlogs() {
+interface MyBlogsInfo {
+  email: string;
+}
+
+function MyBlogsInfo(props: MyBlogsInfo) {
+  const [blogs, setBlogs] = useState<
+    {
+      Blog_ID: string;
+      Blog_Title: string;
+      Blog_Date: string;
+      blog_status: string;
+    }[]
+  >([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/api/v1/user/blogs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: props.email }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setBlogs(data.data.data);
+      });
+  }, [props.email]);
+
+  console.log(blogs);
   return (
-    <div className="myblogs__div">
+    <div className={styles["myblogs__div"]}>
       <DescriptionSharpIcon style={iconStyles.descIcon} />
-      <span className="myblogs__text">My Blogs</span>
-      {myblogsinfo.map(addMyBlogsBox)}
+      <span className={styles["myblogs__text"]}>My Blogs</span>
+      {blogs.length !== 0 ? blogs.map(addMyBlogsBox) : null}
     </div>
   );
 }
 
-export default MyBlogs;
+export default MyBlogsInfo;

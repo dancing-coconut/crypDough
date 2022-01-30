@@ -9,7 +9,7 @@ interface Props {
   scrollBlogs: () => null;
   scroll: string;
   hoverbgcolor: string;
-  scrollExplore:()=>void;
+  scrollExplore: () => void;
 }
 
 function Profilenavbar(props: Props) {
@@ -20,40 +20,50 @@ function Profilenavbar(props: Props) {
     >
       <Logo color={props.itemcolor} />
       <div className={styles["menu__items--container"]}>
-        <Link href="">
-          <Item
-            color={props.itemcolor}
-            option="About"
-            hovercolor={props.hovercolor}
-            hoverbgcolor={props.hoverbgcolor}
-          />
-        </Link>
-        <Link href="">
-          <Item
-            scrollBlogs={props.scrollBlogs}
-            scroll={props.scroll}
-            color={props.itemcolor}
-            option="Blogs"
-            hovercolor={props.hovercolor}
-            hoverbgcolor={props.hoverbgcolor}
-          />
-        </Link>
-        <Link href="">
-          <Item
-            color={props.itemcolor}
-            option="Starred"
-            hovercolor={props.hovercolor}
-            hoverbgcolor={props.hoverbgcolor}
-          />
-        </Link>
-        <Link href="">
-          <Item
-            color={props.itemcolor}
-            option="Progress"
-            hovercolor={props.hovercolor}
-            hoverbgcolor={props.hoverbgcolor}
-          />
-        </Link>
+        <ul className={styles["MenuOptions-profile"]}>
+          <Link href="">
+            <li className={styles[""]} style={{ cursor: "pointer" }}>
+              <Item
+                color={props.itemcolor}
+                option="About"
+                hovercolor={props.hovercolor}
+                hoverbgcolor={props.hoverbgcolor}
+              />
+            </li>
+          </Link>
+          <Link href="">
+            <li className={styles[""]} style={{ cursor: "pointer" }}>
+              <Item
+                scrollBlogs={props.scrollBlogs}
+                scroll={props.scroll}
+                color={props.itemcolor}
+                option="Blogs"
+                hovercolor={props.hovercolor}
+                hoverbgcolor={props.hoverbgcolor}
+              />
+            </li>
+          </Link>
+          <Link href="">
+            <li className={styles[""]} style={{ cursor: "pointer" }}>
+              <Item
+                color={props.itemcolor}
+                option="Starred"
+                hovercolor={props.hovercolor}
+                hoverbgcolor={props.hoverbgcolor}
+              />
+            </li>
+          </Link>
+          <Link href="">
+            <li className={styles[""]} style={{ cursor: "pointer" }}>
+              <Item
+                color={props.itemcolor}
+                option="Progress"
+                hovercolor={props.hovercolor}
+                hoverbgcolor={props.hoverbgcolor}
+              />
+            </li>
+          </Link>
+        </ul>
       </div>
     </div>
   );
@@ -61,11 +71,14 @@ function Profilenavbar(props: Props) {
 
 function Normalnavbar(props: Props) {
   return (
-    <div className={styles["main__navbar"]} style={{ background: props.bgcolor, height: "72px" }}>
+    <div
+      className={styles["main__navbar"]}
+      style={{ background: props.bgcolor, height: "72px" }}
+    >
       <Logo color={props.itemcolor} />
       <ul className={styles["MenuOptions"]}>
-        <Link href="">
-          <li className={styles["item3"]}>
+        <Link href="/explore" passHref>
+          <li className={styles["item3"]} style={{ cursor: "pointer" }}>
             <Item
               scrollExplore={props.scrollExplore}
               scroll={props.scroll}
@@ -77,8 +90,8 @@ function Normalnavbar(props: Props) {
             />
           </li>
         </Link>
-        <Link href="">
-          <li className={styles["item2"]}>
+        <Link href="/contact" passHref>
+          <li className={styles["item2"]} style={{ cursor: "pointer" }}>
             <Item
               color={props.itemcolor}
               option="Contact"
@@ -88,8 +101,8 @@ function Normalnavbar(props: Props) {
             />
           </li>
         </Link>
-        <Link href="/ProfilePage">
-          <li className={styles["item1"]}>
+        <Link href="/profile" passHref>
+          <li className={styles["item1"]} style={{ cursor: "pointer" }}>
             <Item
               color={props.itemcolor}
               option="Profile"

@@ -6,8 +6,9 @@ interface Props {
   email: string;
 }
 
-function WriteBlog(props: Props) {
-  const [blogNumber, setBlogNumber] = useState(0);
+function WritePage(props: Props) {
+  const [blogNumber, setBlogNumber] = useState<number>(0);
+  const [hasSaved,setHasSaved] = useState<boolean>(false);
   const TitleRef = useRef<HTMLInputElement>(null);
   const PostRef = useRef<HTMLTextAreaElement>(null);
 
@@ -24,10 +25,10 @@ function WriteBlog(props: Props) {
         setBlogNumber(data.data.count);
       });
   }, []);
-    console.log(blogNumber);
+
   const SaveHandler = (event: React.FormEvent) => {
     event.preventDefault();
-    console.log(TitleRef.current?.value, PostRef.current?.value);
+    // console.log(TitleRef.current?.value, PostRef.current?.value);
     const post = {
       blogNumber: blogNumber+1,
       title: TitleRef.current?.value,
@@ -48,6 +49,7 @@ function WriteBlog(props: Props) {
         return response.json();
       })
       .then((data) => {
+        setHasSaved(true);
         console.log(data);
       });
   };
@@ -131,6 +133,7 @@ function WriteBlog(props: Props) {
               type="submit"
               className={styles.Posting__options}
               onClick={PostHandler}
+              disabled={!hasSaved}
             >
               Post
             </button>
@@ -141,4 +144,4 @@ function WriteBlog(props: Props) {
   );
 }
 
-export default WriteBlog;
+export default WritePage;

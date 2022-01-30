@@ -1,6 +1,7 @@
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import BarChartIcon from "@mui/icons-material/BarChart";
+import styles from "./ProgressBar.module.css"
 
 const iconStyles = {
   descIcon: {
@@ -13,11 +14,11 @@ const percentage = 20;
 
 function ProgressBar() {
   return (
-    <div className="myblogs__div">
+    <div className={styles.myprogress__div}>
       <BarChartIcon style={iconStyles.descIcon} />
-      <span className="myblogs__text">Progress</span>
-      <div className="progressBar__div">
-        <div className="progressBar__div--investments">
+      <span className={styles.myprogress__text}>Progress</span>
+      <div className={styles.progressBar__div}>
+        <div className={styles.progressBar__div__investments}>
           <CircularProgressbar
             value={percentage}
             text={`${percentage}%`}
@@ -27,9 +28,9 @@ function ProgressBar() {
               trailColor: "#FFF",
             })}
           />
-          <p className="progressBar__descText">INVESTMENTS</p>
+          <p className={styles.progressBar__descText}>INVESTMENTS</p>
         </div>
-        <div className="progressBar__div--transactions">
+        <div className={styles.progressBar__div__transactions}>
           <CircularProgressbar
             value={percentage}
             text={`${percentage}%`}
@@ -39,9 +40,9 @@ function ProgressBar() {
               trailColor: "#FFF",
             })}
           />
-          <p className="progressBar__descText">TRANSACTIONS</p>
+          <p className={styles.progressBar__descText}>TRANSACTIONS</p>
         </div>
-        <div className="progressBar__div--mining">
+        <div className={styles.progressBar__div__mining}>
           <CircularProgressbar
             value={percentage}
             text={`${percentage}%`}
@@ -51,7 +52,7 @@ function ProgressBar() {
               trailColor: "#FFF",
             })}
           />
-          <p className="progressBar__descText">MINING</p>
+          <p className={styles.progressBar__descText}>MINING</p>
         </div>
       </div>
     </div>

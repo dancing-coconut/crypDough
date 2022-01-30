@@ -1,10 +1,14 @@
 import NavigationBar from "../NavigationBar";
 import AboutMe from "./AboutMe";
-import MyBlogs from "./MyBlogInfo";
+import MyBlogsInfo from "./MyBlogInfo";
 import Starred from "./Starred";
 import ProgressBar from "./ProgressBar";
 
-function ProfilePage() {
+
+interface Props{
+  email:string,
+}
+function ProfileWrap(props:Props) {
   return (
     <div>
       <NavigationBar
@@ -15,11 +19,11 @@ function ProfilePage() {
         hoverbgcolor="#FFF"
       />
       <AboutMe />
-      <MyBlogs />
+      <MyBlogsInfo email={props.email}/>
       <Starred />
       <ProgressBar />
     </div>
   );
 }
 
-export default ProfilePage;
+export default ProfileWrap;

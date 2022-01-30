@@ -1,91 +1,95 @@
 .Post__title {
-    font-family: Sora;
-    color: #5b10a8;
-    font-size: 30px;
-    padding-left: 66px;
-  }
-  .Postbox__container {
-    display: flex;
-    justify-content: center;
-  }
-  .PostBox {
-    width: 90%;
-    box-sizing: border-box;
-    height: 400px;
-    align-content: center;
-    display: flex;
-    flex-direction: column;
-    margin: 25px;
-    padding: 25px;
-    border: solid 1.5px;
-    border-color: #5b10a8;
-  }
-  .PostTitle {
-    width: 100%;
-    border-color: #5b10a8;
-    border-width: 1.5px;
-    height: 30px;
-    margin-bottom: 15px;
-  }
-  .Post__Additions {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .Post {
-    color: #5b10a8;
-    width: 25%;
-    border-color: #5b10a8;
-    font-size: 2em;
-    font-family: Sora;
-    border-width: 1.5px 1.5px 0px 1.5px;
-    background-color: white;
-    font-weight: bold;
-  }
-  
-  .Post__options {
-    color: #5b10a8;
-    width: 25%;
-    border-color: #5b10a8;
-    font-size: 2em;
-    font-family: Sora;
-    border-width: 1.5px 1.5px 0px 0px;
-    background-color: white;
-    font-weight: bold;
-  }
-  .Post__area {
-    border-color: #5b10a8;
-    border-width: 1.5px;
-    height: 70%;
-  }
-  .Post__buttons {
-    display: flex;
-    justify-content: right;
-  }
-  
-  .Posting__options {
-    background-color: #5b10a8;
-    color: white;
-    box-sizing: border-box;
-    border-radius: 50px;
-    height: 100%;
-    width: 25%;
-    font-family: Sora;
-    margin: 15px;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  .Post__topic {
-    box-sizing: content-box;
-    padding-left: 63px;
-    position: relative;
-    left: 66px;
-    width: 160px;
-    height: 30px;
-    border: solid 1.5px;
-    border-color: #5b10a8;
-  }
-  .Post__line {
-    border: solid 0.5px;
-    border-color: #5b10a8;
-    margin: 20px 66px 20px 66px;
-  }
+  font-family: Sora;
+  color: #5b10a8;
+  font-size: 30px;
+  padding-left: 66px;
+}
+.Postbox__container {
+  display: flex;
+  justify-content: center;
+}
+.PostBox {
+  width: 90%;
+  box-sizing: border-box;
+  height: 400px;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+  padding: 25px;
+  border: solid 1.5px;
+  border-color: #5b10a8;
+}
+.PostTitle {
+  width: 100%;
+  border-color: #5b10a8;
+  border-width: 1.5px;
+  height: 30px;
+  margin-bottom: 15px;
+}
+.Post__Additions {
+  display: flex;
+  justify-content: space-evenly;
+}
+.Post {
+  color: #5b10a8;
+  width: 25%;
+  border-color: #5b10a8;
+  font-size: 2em;
+  font-family: Sora;
+  border-width: 1.5px 1.5px 0px 1.5px;
+  background-color: white;
+  font-weight: bold;
+}
+
+.Post__options {
+  color: #5b10a8;
+  width: 25%;
+  border-color: #5b10a8;
+  font-size: 2em;
+  font-family: Sora;
+  border-width: 1.5px 1.5px 0px 0px;
+  background-color: white;
+  font-weight: bold;
+}
+.Post__options:disabled {
+  color: red;
+}
+
+.Post__area {
+  border-color: #5b10a8;
+  border-width: 1.5px;
+  height: 70%;
+}
+.Post__buttons {
+  display: flex;
+  justify-content: right;
+}
+
+.Posting__options {
+  background-color: #5b10a8;
+  color: white;
+  box-sizing: border-box;
+  border-radius: 50px;
+  height: 100%;
+  width: 25%;
+  font-family: Sora;
+  margin: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.Post__topic {
+  box-sizing: content-box;
+  padding-left: 63px;
+  position: relative;
+  left: 66px;
+  width: 160px;
+  height: 30px;
+  border: solid 1.5px;
+  border-color: #5b10a8;
+}
+.Post__line {
+  border: solid 0.5px;
+  border-color: #5b10a8;
+  margin: 20px 66px 20px 66px;
+}

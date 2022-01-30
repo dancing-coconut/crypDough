@@ -7,8 +7,7 @@
   justify-content: center;
   flex-direction: row;
   position: relative;
-  left: 45%;
-  bottom: 15px;
+  left: 58%;
 }
 
 /* .MenuOptions {
@@ -19,7 +18,11 @@
   text-decoration: none;
   list-style: none;
 } */
-.main__navbar{
+.main__navbar {
+  position: relative;
+}
+
+.menu__items--div {
   position: relative;
 }
 
@@ -31,7 +34,16 @@
   text-decoration: none;
   list-style: none;
 }
-.item1 {
+
+.MenuOptions-profile {
+  display: flex;
+  position: absolute;
+  left: 0px;
+  top: -10px;
+  text-decoration: none;
+  list-style: none;
+}
+/* .item1 {
   font-family: Sora;
 margin-left: 60px;
 }
@@ -42,4 +54,4 @@ margin-left: 60px;
 .item3 {
   font-family: Sora;
   margin-left: 60px;
-}
+} */

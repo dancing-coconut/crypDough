@@ -1,6 +1,7 @@
 import BlogTitle from "./BlogTitle";
 import MyStarredInfo from "./MapStarred";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
+import styles from "./MyBlogInfo.module.css";
 interface MyBlogInfo{
     id: number;
     title: string;
@@ -27,9 +28,9 @@ const iconStyles = {
 
 function Starred() {
   return (
-    <div className="myblogs__div">
+    <div className={styles.myblogs__div}>
       <BookmarksIcon style={iconStyles.descIcon} />
-      <span className="myblogs__text">Starred</span>
+      <span className={styles.myblogs__text}>Starred</span>
       {MyStarredInfo.map(addStarredBox)}
     </div>
   );

@@ -15,13 +15,15 @@
   font-family: Sora;
 }
 
-.mainsection__image {
-  display: inline-block;
+.mainSection-image__div{
+  position: relative;
   height: 90vh;
   width: 55%;
-  position: relative;
   top: 10%;
   left: 1%;
+}
+.mainsection__image {
+  display: inline-block;
 }
 
 .description__main {
