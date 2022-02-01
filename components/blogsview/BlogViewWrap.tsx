@@ -23,7 +23,7 @@ function BlogViewWrap() {
   >([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/api/v1/blogs`)
+    fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/v1/blogs`)
       .then((response) => {
         return response.json();
       })

@@ -42,12 +42,9 @@ function MyBlogsInfo(props: MyBlogsInfo) {
     }[]
   >([]);
 
+  console.log(process.env.NEXT_PUBLIC_SERVER);
   useEffect(() => {
-    fetch("http://localhost:8000/api/v1/user/blogs", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: props.email }),
-    })
+    fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/v1/blogs/${props.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

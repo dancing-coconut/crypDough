@@ -43,15 +43,15 @@ function AboutMe() {
       </div>
       <div className={styles["profile__image-maindiv"]}>
         <div className={styles["profile__image-div"]}>
-        <Image
-          src={profilePic}
-          className={styles["profile__image"]}
-          alt="profile"
-          layout="fill"
-        />
+          <Image
+            src={profilePic}
+            className={styles["profile__image"]}
+            alt="profile"
+            layout="fill"
+            placeholder="blur"
+          />
+        </div>
       </div>
-      </div>
-      
 
       <span className={styles["name__first"]}>First Name</span>
       <span className={styles["name__last"]}>Last Name</span>

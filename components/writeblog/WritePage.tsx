@@ -13,11 +13,9 @@ function WritePage(props: Props) {
   const PostRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/v1/blogs/user", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: props.email }),
-    })
+    fetch(
+      `${process.env.NEXT_PUBLIC_SERVER}/api/v1/blogs/${props.email}?count=yes`
+    )
       .then((response) => {
         return response.json();
       })
@@ -37,7 +35,7 @@ function WritePage(props: Props) {
       photo:
         "https://www.emergingedtech.com/wp/wp-content/uploads/2018/04/blogging.jpg",
     };
-    fetch("http://127.0.0.1:8000/api/v1/save-blog", {
+    fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/v1/blogs`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(post),
@@ -65,8 +63,8 @@ function WritePage(props: Props) {
       photo:
         "https://www.emergingedtech.com/wp/wp-content/uploads/2018/04/blogging.jpg",
     };
-    fetch("http://127.0.0.1:8000/api/v1/post-blog", {
-      method: "POST",
+    fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/v1/blogs`, {
+      method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(post),
     })
