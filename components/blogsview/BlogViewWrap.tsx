@@ -42,11 +42,13 @@ function BlogViewWrap() {
       <NavigationBar itemcolor="white" bgcolor="#5B10A8" navtype="profile1" />
       <div className={styles.Search__area}>
         <div className={styles.Search__box}></div>
-        <Link href="/blog/writeblog" passHref>
-          <Fab color="secondary" className={styles.Plus__button}>
-            <AddIcon />
-          </Fab>
-        </Link>
+        <div className={styles.Plus__button}>
+          <Link href="/blog/writeblog" passHref>
+            <Fab color="secondary">
+              <AddIcon />
+            </Fab>
+          </Link>
+        </div>
       </div>
       <div className={styles.Blog_Row}>
         {totalBlogs
