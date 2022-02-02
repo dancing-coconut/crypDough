@@ -14,17 +14,19 @@ function BlogViewSection(props: Props) {
   let date = new Date(
     Date.parse(props.date.substring(0, 10).replace(/[-]/g, "/"))
   );
+
   function TrimName(name: string) {
     if (name.length > 300) {
       let name1 = name.slice(0, 300);
       while (name1.charAt(name1.length - 1) !== " " && name1.length !== 0) {
         name1 = name1.slice(0, -1);
       }
-      return name1;
+      return name1+"...Read More";
     } else {
-      return name;
+      return name+"...Read More";
     }
   }
+  
   return (
     <div className={styles.Blog__box}>
       <div className={styles.Author__section}>

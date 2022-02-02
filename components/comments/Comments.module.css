@@ -1,0 +1,39 @@
+.Author__section {
+    display: flex;
+    flex-direction: row;
+  }
+  .Author__details {
+    margin-left: 3vw;
+  }
+  .Author__name {
+    font-family: Sora;
+    transform: scale(2);
+    color: #5b10a8;
+  }
+  .Comment__date {
+    font-family: Sora;
+    transform: scale(2);
+    color: #5b10a8;
+  }
+  .Account__icon {
+    color: #5b10a8;
+    transform: scale(2);
+    margin-left: 0.5vw;
+  }
+  .Comment__content{
+    margin-left: 0.5vw;
+    margin-top: 10px;
+    color: #5b10a8;
+  }
+  .Vote__section{
+    display:flex;
+    flex-direction: row;
+  }
+  .Up__icon{
+    color: #5b10a8;
+    transform: scale(2);
+  }
+  .Down__icon{
+    color: #5b10a8;
+    transform: scale(2);
+  }
