@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-interface Blog {}
+interface Blog {
+  blogid: string;
+}
 
 const Blog = (props: Blog) => {
   const [blogData, setblogData] = useState<{
@@ -20,7 +22,7 @@ const Blog = (props: Blog) => {
 
   useEffect(() => {
     fetch(
-      `${process.env.NEXT_PUBLIC_SERVER}/api/v1/blogs/blog/dancingcoconut12@gmail.com1`
+      `${process.env.NEXT_PUBLIC_SERVER}/api/v1/blogs/blog/${props.blogid}`
     )
       .then((response) => {
         return response.json();

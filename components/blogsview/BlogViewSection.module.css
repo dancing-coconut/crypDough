@@ -7,7 +7,6 @@
   height: 10%;
   font-family: Sora;
   color: #5b10a8;
-
 }
 .Author__section {
   display: grid;
@@ -30,6 +29,7 @@
   color: #5b10a8;
   margin-top: 1.5vh;
   font-size: 2em;
+  cursor: pointer;
 }
 .Account__icon {
   color: #5b10a8;
@@ -79,7 +79,7 @@
 .Blog__date {
   font-weight: 600;
 }
-.Blog__container{
+.Blog__container {
   display: flex;
   flex-direction: row;
 }

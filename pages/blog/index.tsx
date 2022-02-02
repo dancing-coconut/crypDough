@@ -1,7 +1,15 @@
-import Blog from "../../components/blog/Blog";
 import type { NextPage } from "next";
+import BlogViewWrap from "../../components/blogsview/BlogViewWrap";
 
-const FullBlog: NextPage = () => {
-  return <Blog />;
+interface Props {}
+
+const BlogsViewPage: NextPage = (props: Props) => {
+  return (
+    <div>
+      <BlogViewWrap />
+    </div>
+  );
 };
-export default FullBlog;
+
+export default BlogsViewPage;
+
