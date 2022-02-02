@@ -1,6 +1,7 @@
 .Blog__img {
   width: 45vw;
   height: 40vh;
+  cursor: pointer;
 }
 .Blog__desc {
   width: 40vw;
@@ -82,4 +83,8 @@
 .Blog__container {
   display: flex;
   flex-direction: row;
+}
+
+.Blog-desc__readmore{
+  cursor: pointer;
 }

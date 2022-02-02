@@ -10,24 +10,24 @@ interface Props {
   blogimg: string;
   blogname: string;
   blogdesc: string;
-  blogid:string;
+  blogid: string;
 }
 function BlogViewSection(props: Props) {
   let date = new Date(
     Date.parse(props.date.substring(0, 10).replace(/[-]/g, "/"))
   );
 
-  function TrimName(name: string) {
-    if (name.length > 300) {
-      let name1 = name.slice(0, 300);
-      while (name1.charAt(name1.length - 1) !== " " && name1.length !== 0) {
-        name1 = name1.slice(0, -1);
-      }
-      return name1 + "...Read More";
-    } else {
-      return name + "...Read More";
-    }
-  }
+  // function TrimName(name: string) {
+  //   if (name.length > 300) {
+  //     let name1 = name.slice(0, 300);
+  //     while (name1.charAt(name1.length - 1) !== " " && name1.length !== 0) {
+  //       name1 = name1.slice(0, -1);
+  //     }
+  //     return name1 + "...Read More";
+  //   } else {
+  //     return name + "...Read More";
+  //   }
+  // }
 
   return (
     <div className={styles["Blog__box"]}>
@@ -40,15 +40,23 @@ function BlogViewSection(props: Props) {
           >{`${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`}</h6>
         </div>
       </div>
-      <img
-        className={styles["Blog__img"]}
-        src={props.blogimg}
-        alt="Blog's Pictures"
-      />
+      <Link href={`/blog/${props.blogid}`}>
+        <img
+          className={styles["Blog__img"]}
+          src={props.blogimg}
+          alt="Blog's Pictures"
+        />
+      </Link>
+
       <Link href={`/blog/${props.blogid}`}>
         <h3 className={styles["Blog__title"]}>{props.blogname}</h3>
       </Link>
-      <p className={styles["Blog__desc"]}>{TrimName(props.blogdesc)}</p>
+      <p className={styles["Blog__desc"]}>
+        {props.blogdesc}{" "}
+        <Link href={`/blog/${props.blogid}`}>
+          <span className={styles["Blog-desc__readmore"]}>...Read More</span>
+        </Link>
+      </p>
       <div className={styles["Blogopt__section"]}>
         <BookmarksIcon className={styles["Bookmark__icon"]} />
         <CommentIcon className={styles["Comment__icon"]} />
