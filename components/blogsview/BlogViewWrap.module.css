@@ -16,10 +16,6 @@
   top: 2vh;
   right: 30vw;
 }
-.Blog_row {
-  display: flex;
-  flex-direction: row;
-}
 .Plus__button {
   color: white;
   position: absolute;
@@ -28,8 +24,7 @@
 }
 
 .Blog_Row {
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0;
-  flex-basis: 33.333333%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 120px;
 }

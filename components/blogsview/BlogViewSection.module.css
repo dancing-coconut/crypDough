@@ -1,75 +1,85 @@
-  .Blog__img {
-    width: 45vw;
-    height: 40vh;
-  }
-  .Blog__desc {
-    width: 90%;
-    font-family: Sora;
-    color: #5b10a8;
-  }
-  .Author__section {
-    display: flex;
-    flex-direction: row;
-  }
-  .Author__details {
-    margin-left: 10px;
-  }
-  .Author__name {
-    font-family: Sora;
-    color: #5b10a8;
-  }
-  .Blog__date {
-    font-family: Sora;
-    color: #5b10a8;
-  }
-  .Blog__title {
-    font-family: Sora;
-    color: #5b10a8;
-    margin-top: 1.5vh;
-    font-size: 2em;
-  }
-  .Account__icon {
-    color: #5b10a8;
-  }
-  .Bookmark__icon {
-    color: #5b10a8;
-  }
-  .Comment__icon {
-    color: #5b10a8;
-  }
-  .Blog__box {
-    margin: 50px;
-    position: relative;
-    width: 40%;
-    height: 50vh;
-  }
-  .Author__section {
-    margin-bottom: 2vh;
-  }
-  .Account__icon {
-    transform: scale(2);
-    margin-left: 0.5vw;
-  }
-  .Author__details {
-    transform: scale(1.75);
-    margin-left: 3vw;
-  }
-  .Blog__desc {
-    margin-top: 1vh;
-    font-size: 1.3em;
-    font-weight: 600;
-  }
-  .Blogopt__section {
-    margin-top: 3vh;
-  }
-  .Bookmark__icon {
-    transform: scale(2);
-    margin-right: 40px;
-    margin-left: 5px;
-  }
-  .Comment__icon {
-    transform: scale(2);
-  }
-  .Blog__date {
-    font-weight: 600;
-  }
+.Blog__img {
+  width: 45vw;
+  height: 40vh;
+}
+.Blog__desc {
+  width: 40vw;
+  height: 10%;
+  font-family: Sora;
+  color: #5b10a8;
+
+}
+.Author__section {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 1.5vw;
+}
+.Author__details {
+  margin-left: 20px;
+}
+.Author__name {
+  font-family: Sora;
+  color: #5b10a8;
+}
+.Blog__date {
+  font-family: Sora;
+  color: #5b10a8;
+}
+.Blog__title {
+  font-family: Sora;
+  color: #5b10a8;
+  margin-top: 1.5vh;
+  font-size: 2em;
+}
+.Account__icon {
+  color: #5b10a8;
+}
+.Bookmark__icon {
+  color: #5b10a8;
+}
+.Comment__icon {
+  color: #5b10a8;
+}
+.Blog__box {
+  margin: 28px;
+  position: relative;
+  width: 40%;
+  height: 50vh;
+}
+.Author__section {
+  margin-bottom: 2vh;
+}
+.Account__icon {
+  transform: scale(2);
+  margin-left: 0.5vw;
+}
+.Author__details {
+  transform: scale(1.75);
+  margin-left: 3vw;
+}
+.Blog__desc {
+  margin-top: 1vh;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+.Blogopt__section {
+  margin-top: 9vh;
+  margin-bottom: 10vh;
+}
+.Bookmark__icon {
+  transform: scale(2);
+  margin-right: 40px;
+  margin-left: 5px;
+  margin-bottom: 20px;
+}
+.Comment__icon {
+  transform: scale(2);
+  margin-bottom: 20px;
+}
+.Blog__date {
+  font-weight: 600;
+}
+.Blog__container{
+  display: flex;
+  flex-direction: row;
+}
