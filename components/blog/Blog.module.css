@@ -1,0 +1,126 @@
+.Blog__container{
+    width: 50vw;
+    margin-left:5vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+.Author_section{
+    display: flex;
+    flex-direction: row;
+}
+.Account__icon{
+    transform: scale(3);
+    margin-left: 1vw;
+    color: #5b10a8;
+    margin-bottom: 3vh;
+}
+.Author__details{
+    margin-left: 3vw;
+}
+.Author__name{
+    color: #5b10a8;
+    transform: scale(2);
+    margin-bottom: 1vh;
+}
+.Blog__date{
+    color: #5b10a8;
+    transform: scale(2);
+}
+.Blog__content{
+    margin-top: 3vh;
+    color: #5b10a8;
+    width: 50vw;
+}
+.Blog__title{
+    color: #5b10a8;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.Blog__picture{
+    width: 50vw;
+}
+.About__section{
+    width: 35vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    color:#5b10a8;
+    border-left: 2px solid #999999;
+    background-color: white;
+    padding-top:80px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+.Cover__box{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    border-bottom: 2px solid #999999;
+    z-index: -1;
+    margin-bottom: 5vh;
+}
+.Full__blog{
+    height: auto;
+}
+.Comment__section{
+    margin-left:5vw;
+}
+.Comment__title{
+    color: #5b10a8;
+    margin-bottom: 2vh;
+}
+.Account__icon--Comment{
+    transform: scale(2);
+    color: #5b10a8;
+    margin-left: 0.4vw;
+}
+.Comment__box{
+    display: flex;
+    flex-direction: row;
+}
+.Write__comment{
+    border-radius: 5px;
+    margin-left: 1vw;
+    border-color: #999999;
+}
+.Comment__options{
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: row;
+    margin-left: 1vw;
+}
+.Comment__write{
+    display: flex;
+    flex-direction: column;
+}
+.Comment__submit{
+    background-color: #5b10a8;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 0.5vw;
+    font-weight: bold;
+    width: 6vw;
+}
+.Comment__preview{
+    background-color: #5b10a8;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 0.5vw;
+    font-weight: bold;
+    width: 6vw;
+}
+.Author__photo{
+    border-radius: 50%;
+    width: 20vw;
+    height: 20vw;
+    margin-right: 2.5vw;
+    margin-left: 2.5vw;
+}
+

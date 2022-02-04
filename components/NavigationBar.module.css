@@ -20,6 +20,7 @@
 } */
 .main__navbar {
   position: relative;
+  z-index: 1;
 }
 
 .menu__items--div {
