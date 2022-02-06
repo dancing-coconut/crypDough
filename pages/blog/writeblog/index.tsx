@@ -1,4 +1,4 @@
-import WritePage from "../../../components/writeblog/WritePage";
+import WritePage from "../../../writeblog/WritePage";
 import { useSession } from "next-auth/react";
 
 import type { NextPage } from "next";

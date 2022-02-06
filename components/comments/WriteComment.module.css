@@ -1,0 +1,58 @@
+.Account__icon {
+  margin-top:0.5vh;
+  color: #5b10a8;
+  transform: scale(2);
+  margin-left: 0.5vw;
+}
+
+.Write__comment {
+  border-radius: 5px;
+  margin-left: 1vw;
+  border-color: #999999;
+  width: 55vw;
+}
+
+.Comment__write {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4vh;
+}
+
+.Comment__submit {
+  background-color: #5b10a8;
+  color: white;
+  border: 0px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 0.5vw;
+  font-weight: bold;
+  width: 6vw;
+}
+
+.Comment__preview {
+  background-color: #5b10a8;
+  color: white;
+  border: 0px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 0.5vw;
+  font-weight: bold;
+  width: 6vw;
+}
+
+.Comment__options {
+  margin-top: 1vh;
+  display: flex;
+  flex-direction: row;
+  margin-left: 1vw;
+}
+
+.Comment__box {
+  margin-left: 1vw;
+  margin-top: 4vh;
+}
+
+.Comm__container {
+  display: flex;
+  flex-direction: column;
+}

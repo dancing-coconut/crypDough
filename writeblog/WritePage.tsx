@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import NavigationBar from "../NavigationBar";
+import NavigationBar from "../components/NavigationBar";
 import styles from "./WritePage.module.css";
 
 interface Props {
