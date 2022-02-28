@@ -9,7 +9,13 @@ interface CommentsProps {
 }
 
 function Comments(props: CommentsProps) {
-  const [comments, setComments] = useState([
+  const [comments, setComments] = useState<
+    {
+      author: string;
+      date: string;
+      content: string;
+    }[]
+  >([
     {
       author: "ABC",
       date: "DD-MM-YYYY",
@@ -25,17 +31,20 @@ function Comments(props: CommentsProps) {
   }, [props.commentData]);
 
   return (
-    <div>
-      {comments.map((comment) => {
-        return (
-          <Comment
-            author={comment.author}
-            date={comment.date}
-            content={comment.content}
-          />
-        );
-      })}
-    </div>
+    <>
+      {comments.length !== 0
+        ? comments.map((comment) => {
+            return (
+              <Comment
+                author={comment.author}
+                date={comment.date}
+                content={comment.content}
+                key={comment.author + comment.date}
+              />
+            );
+          })
+        : null}
+    </>
   );
 }
 

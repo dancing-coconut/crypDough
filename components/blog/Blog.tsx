@@ -5,9 +5,8 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import NavigationBar from "../NavigationBar";
 import Comments from "../comments/Comments";
 import WriteComment from "../comments/WriteComment";
-
 interface Blog {
-  blogid: string;
+  blogid: string | string[] | undefined;
 }
 
 const Blog = (props: Blog) => {
@@ -25,10 +24,15 @@ const Blog = (props: Blog) => {
     Blog_Content: "",
   });
 
-  const [commentData, setCommentData] = useState({
-    author: "",
-    date: "",
-    content: "",
+  const [commentData, setCommentData] = useState<{
+    author: string;
+    date: string;
+    content: string;
+  }>({
+    author: "ABC",
+    date: "DD-MM-YYYY",
+    content:
+      "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual",
   });
 
   const addComment = (comment: {
@@ -40,15 +44,19 @@ const Blog = (props: Blog) => {
   };
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/v1/blogs/blog/${props.blogid}`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data.data);
-        setblogData(data.data);
-      });
-  }, []);
+    if (props.blogid) {
+      fetch(
+        `${process.env.NEXT_PUBLIC_SERVER}/api/v1/blogs/blog/${props.blogid}`
+      )
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data.data);
+          setblogData(data.data);
+        });
+    }
+  }, [props.blogid]);
 
   return (
     <div className={styles.Full__blog}>
@@ -58,13 +66,16 @@ const Blog = (props: Blog) => {
           <div className={styles.Author_section}>
             <AccountCircleIcon className={styles.Account__icon} />
             <div className={styles.Author__details}>
-              {/* <h className={styles.Author__name}>{blogData.Author_Email}</h 5> */}
               <h6 className={styles.Blog__date}>DD-MM-YYYY</h6>
             </div>
           </div>
           <div className={styles.Blog__section}>
             <h1 className={styles.Blog__title}>{blogData.Blog_Title}</h1>
-            <img className={styles.Blog__picture} src="" alt="Blog Picture" />
+            <img
+              className={styles.Blog__picture}
+              src={blogData.Blog_Photo}
+              alt="Blog Picture"
+            />
             <div className={styles.Blog__content}>{blogData.Blog_Content}</div>
           </div>
         </div>
@@ -78,14 +89,11 @@ const Blog = (props: Blog) => {
       </div>
       <h1 className={styles.Comment__title}>Discussion</h1>
       <div className={styles.Comment__section}>
-        <WriteComment addComment={addComment}/>
+        <WriteComment addComment={addComment} />
       </div>
-      <Comments commentData={commentData}/>
-      {/* <Comments 
-        author="ABC"
-        date="DD-MM-YYYY"
-        content="AHSJHKAJFKF"
-        /> */}
+      <div className={styles.Comment__Div}>
+        <Comments commentData={commentData} />
+      </div>
     </div>
   );
 };
