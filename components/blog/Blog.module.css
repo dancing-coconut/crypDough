@@ -71,6 +71,7 @@
 .Comment__title{
     color: #5b10a8;
     margin-bottom: 2vh;
+    margin-left: 4.75vw;
 }
 .Account__icon--Comment{
     transform: scale(2);
@@ -123,4 +124,7 @@
     margin-right: 2.5vw;
     margin-left: 2.5vw;
 }
-
+.Comment__Div{
+    margin-left: 4vw;
+    margin-bottom: 10vh;
+}
