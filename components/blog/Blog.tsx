@@ -24,27 +24,27 @@ const Blog = (props: Blog) => {
     Blog_Content: "",
   });
 
-  const [commentData, setCommentData] = useState<{
-    author: string;
-    date: string;
-    content: string;
-  }>({
-    author: "ABC",
-    date: "DD-MM-YYYY",
-    content:
-      "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual",
-  });
+  //Bishop code maybe?????
+  // const [commentData, setCommentData] = useState<{
+  //   author: string;
+  //   date: string;
+  //   content: string;
+  // }>({
+  //   author: "ABC",
+  //   date: "DD-MM-YYYY",
+  //   content:
+  //     "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual",
+  // });
 
-  const addComment = (comment: {
-    author: string;
-    date: string;
-    content: string;
-  }) => {
-    setCommentData(comment);
-  };
-
+  // const addComment = (comment: {
+  //   author: string;
+  //   date: string;
+  //   content: string;
+  // }) => {
+  //   setCommentData(comment);
+  // };
   useEffect(() => {
-    if (props.blogid) {
+    if (props.blogid){
       fetch(
         `${process.env.NEXT_PUBLIC_SERVER}/api/v1/blogs/blog/${props.blogid}`
       )
@@ -89,13 +89,21 @@ const Blog = (props: Blog) => {
       </div>
       <h1 className={styles.Comment__title}>Discussion</h1>
       <div className={styles.Comment__section}>
-        <WriteComment addComment={addComment} />
+        {/* Is addComment still needed */}
+        {/* How do you fix this type equation error */}
+        <WriteComment parent={blogData.Blog_ID} blogid={blogData.Blog_ID}/>
       </div>
       <div className={styles.Comment__Div}>
-        <Comments commentData={commentData} />
+        {/*Do we still need commentData={commentData}*/}
+        <Comments parent={blogData.Blog_ID} blogid={blogData.Blog_ID}/>
       </div>
     </div>
   );
 };
 
 export default Blog;
+
+/* Logic for blogs to comments:
+Our blog boi/gal/prefer-not-to-say here gives its id to WriteComment as the blogid of that comment
+and as the parent id of that comment, as any comment made with this WriteComment is directly for blog
+The Comments holds all the comments with parent id as the blogid, and with blogid and this blog's id*/
