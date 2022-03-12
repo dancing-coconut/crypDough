@@ -24,15 +24,15 @@ const Blog = (props: Blog) => {
     Blog_Content: "",
   });
 
+  //Bishop code maybe?????
   const [commentData, setCommentData] = useState<{
-    author: string;
-    date: string;
-    content: string;
+    author: string | null;
+    date: string | null;
+    content: string | null;
   }>({
-    author: "ABC",
-    date: "DD-MM-YYYY",
-    content:
-      "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual",
+    author: null,
+    date: null,
+    content: null,
   });
 
   const addComment = (comment: {
@@ -42,7 +42,6 @@ const Blog = (props: Blog) => {
   }) => {
     setCommentData(comment);
   };
-
   useEffect(() => {
     if (props.blogid) {
       fetch(
@@ -89,13 +88,31 @@ const Blog = (props: Blog) => {
       </div>
       <h1 className={styles.Comment__title}>Discussion</h1>
       <div className={styles.Comment__section}>
-        <WriteComment addComment={addComment} />
+        {/* Is addComment still needed */}
+        {/* How do you fix this type equation error */}
+        <WriteComment
+          parent={blogData.Blog_ID}
+          blogid={blogData.Blog_ID}
+          addComment={addComment}
+        />
       </div>
       <div className={styles.Comment__Div}>
-        <Comments commentData={commentData} />
+        {/*Do we still need commentData={commentData}*/}
+        <Comments
+          parent={blogData.Blog_ID}
+          blogid={blogData.Blog_ID}
+          commentData={commentData}
+          addComment={addComment}
+
+        />
       </div>
     </div>
   );
 };
 
 export default Blog;
+
+/* Logic for blogs to comments:
+Our blog boi/gal/prefer-not-to-say here gives its id to WriteComment as the blogid of that comment
+and as the parent id of that comment, as any comment made with this WriteComment is directly for blog
+The Comments holds all the comments with parent id as the blogid, and with blogid and this blog's id*/

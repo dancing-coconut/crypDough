@@ -125,6 +125,9 @@
     margin-left: 2.5vw;
 }
 .Comment__Div{
-    margin-left: 4vw;
+    position: relative;
+    left: 210px;
     margin-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
 }
