@@ -1,22 +1,25 @@
 import { useState } from "react";
 import useMeasure from "react-use-measure";
 import { useSpring, animated } from "@react-spring/web";
-import styles from "./GetStartedButton.module.css"
-interface Props{
-  onClickOpenModal:(value)=>void;
+import styles from "./GetStartedButton.module.css";
+interface Props {
+  onClickOpenModal: (value: boolean) => void;
 }
 
-function GetStartedButton(props:Props) {
+function GetStartedButton(props: Props) {
   const [open, toggle] = useState(false);
   const [ref, { width }] = useMeasure();
-  const props1 = useSpring({config:{friction:35},to:{width: open ? width : 0 }});
+  const props1 = useSpring({
+    config: { friction: 35 },
+    to: { width: open ? width : 0 },
+  });
 
   return (
     <div className={styles["divButton"]}>
       <div
         ref={ref}
         className={styles["button__main"]}
-        onClick={()=>props.onClickOpenModal(true)}
+        onClick={() => props.onClickOpenModal(true)}
         onMouseOver={() => toggle(true)}
         onMouseOut={() => toggle(false)}
       >

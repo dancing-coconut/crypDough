@@ -9,6 +9,12 @@ interface Props {
 }
 
 const MainWrap = (props: Props) => {
+  const [modalState, setModalState] = useState(false);
+
+  const modalStateHandler = (value) => {
+    setModalState(value);
+  };
+
   return (
     <>
       <NavigationBar
@@ -18,8 +24,9 @@ const MainWrap = (props: Props) => {
         bgcolor="#FFFFFF"
         hovercolor="#FFFFFF"
         hoverbgcolor="linear-gradient(242.75deg, #410C75 19.25%, #B638FF 67%)"
+        modalStateHandler={modalStateHandler}
       />
-      <MainBox />
+      <MainBox modalState={modalState} modalStateHandler={modalStateHandler} />
       <div className={styles["subbox"]}>
         <SubBox
           bgUrl="/Images/LandingPage/InvestmentMainPage.png"

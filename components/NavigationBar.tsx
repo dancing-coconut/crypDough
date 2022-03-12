@@ -2,6 +2,7 @@ import Logo from "./home/Logo";
 import Item from "./home/Item";
 import Link from "next/link";
 import styles from "./NavigationBar.module.css";
+import { useSession } from "next-auth/react";
 interface Props {
   bgcolor: string;
   itemcolor: string;
@@ -10,6 +11,7 @@ interface Props {
   scroll: string;
   hoverbgcolor: string;
   scrollExplore: () => void;
+  modalStateHandler: (value: boolean) => void;
 }
 
 function Profilenavbar(props: Props) {
@@ -70,6 +72,12 @@ function Profilenavbar(props: Props) {
 }
 
 function Normalnavbar(props: Props) {
+  const { data: session, status } = useSession();
+  let accessToken;
+  if (session) {
+    accessToken = session.accessToken;
+  }
+  console.log("props.modalStateHandler", props.modalStateHandler);
   return (
     <div
       className={styles["main__navbar"]}
@@ -101,17 +109,25 @@ function Normalnavbar(props: Props) {
             />
           </li>
         </Link>
-        <Link href="/profile" passHref>
-          <li className={styles["item1"]} style={{ cursor: "pointer" }}>
-            <Item
-              color={props.itemcolor}
-              option="Profile"
-              bgcolor={props.bgcolor}
-              hovercolor={props.hovercolor}
-              hoverbgcolor={props.hoverbgcolor}
-            />
-          </li>
-        </Link>
+        <div
+          onClick={() => {
+            if (status !== "authenticated") {
+              props.modalStateHandler(true);
+            }
+          }}
+        >
+          <Link href={status === "authenticated" ? "/profile" : "/"} passHref>
+            <li className={styles["item1"]} style={{ cursor: "pointer" }}>
+              <Item
+                color={props.itemcolor}
+                option={status === "authenticated" ? "Profile" : "Sign In"}
+                bgcolor={props.bgcolor}
+                hovercolor={props.hovercolor}
+                hoverbgcolor={props.hoverbgcolor}
+              />
+            </li>
+          </Link>
+        </div>
       </ul>
     </div>
   );
@@ -138,6 +154,7 @@ function NavigationBar(props: Props) {
         bgcolor={props.bgcolor}
         hovercolor={props.hovercolor}
         hoverbgcolor={props.hoverbgcolor}
+        modalStateHandler={props.modalStateHandler}
       />
     );
   }

@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useState } from "react";
 import ExploreWrap from "../components/home/exploresection/ExploreWrap";
-
+import { signIn, signOut, useSession } from "next-auth/react";
 import MainWrap from "../components/home/mainsection/MainWrap";
 import styles from "./index.module.css";
 
@@ -13,6 +13,12 @@ const BlogPage: NextPage = () => {
   const scrollExplore = () => {
     setExploreScroll(true);
   };
+  const { data: session } = useSession();
+  let accessToken;
+  if (session) {
+    accessToken = session.accessToken;
+  }
+  console.log("session,accessToken", session, accessToken);
 
   return (
     <div style={{ height: "1300px" }}>

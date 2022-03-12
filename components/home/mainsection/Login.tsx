@@ -14,6 +14,13 @@ function Login(props: Props) {
   const { data: session, status } = useSession();
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+  // const { data: session, status } = useSession();
+  const { data: session } = useSession();
+  let accessToken;
+  if (session) {
+    accessToken = session.accessToken;
+  }
+  console.log("session,accessToken", session, accessToken);
 
   const loginHandler = (event: React.FormEvent) => {
     event.preventDefault();
