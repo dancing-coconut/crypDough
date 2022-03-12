@@ -25,26 +25,25 @@ const Blog = (props: Blog) => {
   });
 
   //Bishop code maybe?????
-  // const [commentData, setCommentData] = useState<{
-  //   author: string;
-  //   date: string;
-  //   content: string;
-  // }>({
-  //   author: "ABC",
-  //   date: "DD-MM-YYYY",
-  //   content:
-  //     "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual",
-  // });
+  const [commentData, setCommentData] = useState<{
+    author: string | null;
+    date: string | null;
+    content: string | null;
+  }>({
+    author: null,
+    date: null,
+    content: null,
+  });
 
-  // const addComment = (comment: {
-  //   author: string;
-  //   date: string;
-  //   content: string;
-  // }) => {
-  //   setCommentData(comment);
-  // };
+  const addComment = (comment: {
+    author: string;
+    date: string;
+    content: string;
+  }) => {
+    setCommentData(comment);
+  };
   useEffect(() => {
-    if (props.blogid){
+    if (props.blogid) {
       fetch(
         `${process.env.NEXT_PUBLIC_SERVER}/api/v1/blogs/blog/${props.blogid}`
       )
@@ -91,11 +90,21 @@ const Blog = (props: Blog) => {
       <div className={styles.Comment__section}>
         {/* Is addComment still needed */}
         {/* How do you fix this type equation error */}
-        <WriteComment parent={blogData.Blog_ID} blogid={blogData.Blog_ID}/>
+        <WriteComment
+          parent={blogData.Blog_ID}
+          blogid={blogData.Blog_ID}
+          addComment={addComment}
+        />
       </div>
       <div className={styles.Comment__Div}>
         {/*Do we still need commentData={commentData}*/}
-        <Comments parent={blogData.Blog_ID} blogid={blogData.Blog_ID}/>
+        <Comments
+          parent={blogData.Blog_ID}
+          blogid={blogData.Blog_ID}
+          commentData={commentData}
+          addComment={addComment}
+
+        />
       </div>
     </div>
   );

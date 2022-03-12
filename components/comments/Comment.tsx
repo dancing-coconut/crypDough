@@ -4,7 +4,7 @@ import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 import CommentIcon from "@mui/icons-material/Comment";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import {useState} from 'react';
+import { useState } from "react";
 import WriteComment from "./WriteComment";
 import Comments from "./Comments";
 interface Props {
@@ -13,6 +13,7 @@ interface Props {
   content: string;
   commentid: string;
   blogid: string;
+  addComment: ({}) => null;
 }
 function Comment(props: Props) {
   const [disp, setdisp] = useState(false);
@@ -42,6 +43,7 @@ function Comment(props: Props) {
   // }) => {
   //   setCommentData(comment);
   // };
+  console.log(props.commentid);
   return (
     <div className={styles.Comment__box}>
       <div className={styles.Author__section}>
@@ -55,14 +57,34 @@ function Comment(props: Props) {
       <div className={styles.Vote__section}>
         <ThumbUpIcon className={styles.Up__icon} />
         <ThumbDownIcon className={styles.Down__icon} />
-        <button type="button" className={styles.Reply__button} onClick={()=>{setshow(!show)}}>
+        <button
+          type="button"
+          className={styles.Reply__button}
+          onClick={() => {
+            setshow(!show);
+          }}
+        >
           <KeyboardArrowDownIcon className={styles.Dropdown} />
         </button>
-        <button type="button" className={styles.Reply__button} onClick={()=>{setdisp(!disp)}}>
+        <button
+          type="button"
+          className={styles.Reply__button}
+          onClick={() => {
+            setdisp(!disp);
+          }}
+        >
           <CommentIcon className={styles.Reply__icon} />
         </button>
-        {disp?<WriteComment parent={props.commentid} blogid={props.blogid}/>:null}
-        {show?<Comments parent={props.commentid} blogid={props.blogid}/>:null}
+        {disp ? (
+          <WriteComment
+            addComment={props.addComment}
+            parent={props.commentid}
+            blogid={props.blogid}
+          />
+        ) : null}
+        {show ? (
+          <Comments parent={props.commentid} blogid={props.blogid} />
+        ) : null}
       </div>
     </div>
   );

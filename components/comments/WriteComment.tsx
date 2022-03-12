@@ -1,14 +1,15 @@
 import styles from "./WriteComment.module.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import React, { useRef,useState,useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 //Do we still need to go from Child to Parent?
-interface Props{
-  parent:string;
-  blogid:string;
+interface Props {
+  parent: string;
+  blogid: string;
+  addComment: ({}) => null;
 }
-function WriteComment(props:Props) {
-  const contentRef = useRef<HTMLTextAreaElement>()
+function WriteComment(props: Props) {
+  const contentRef = useRef<HTMLTextAreaElement>(null);
   //Should this still be there?
   // const commentSubmitHandler = () => {
   //   props.addComment({
@@ -17,30 +18,37 @@ function WriteComment(props:Props) {
   //     content: contentRef.current?.value
   //   })
   // };
-  const [commentno, setcommentno] = useState<number>(0);
-  async function SubmitHandler(event: React.FormEvent) {
+
+  async function SubmitHandler() {
     //How do you get the count? With something/comments/something/${props.parent}?
-    const resp1 = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/v1/comments/count/${props.parent}`);
+    const resp1 = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER}/api/v1/comments/count/${props.parent}`
+    );
     const data1 = await resp1.json();
-    console.log(data1.data.count);
-    setcommentno(data1.data.count);
-    event.preventDefault();
-    const comm={
-      //commno - comment's count, but where is that child?????
-      commno:commentno+1,
-      parent:props.parent,
-      content:contentRef.current?.value,
-      author:"dancingcoconut12@gmail.com",
-      blogid:props.blogid,
+
+    const comm = {
+      commno: data1.data.count + 1,
+      parent: props.parent,
+      content: contentRef.current?.value,
+      author: "palanikannan.m2020@vitstudent.ac.in",
+      blogid: props.blogid,
     };
-    const resp2 = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/v1/comments`,{
-      method:"POST",
-      headers:{ "Content-Type":"application/json" },
-      body:JSON.stringify(comm),
-    })
-    if(resp2.status===404){
-        console.log("Error");
+    const resp2 = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER}/api/v1/comments`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(comm),
+      }
+    );
+    if (resp2.status === 404) {
+      console.log("Error");
     }
+    props.addComment({
+      author: "aafsaf",
+      date: "DD-MM-YYYY",
+      content: contentRef.current?.value,
+    });
   }
   return (
     <div className={styles.Comment__box}>
