@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "react-modal";
 import GetStartedButton from "./GetStartedButton";
 import Signup from "./SignUp";
@@ -7,19 +7,28 @@ import styles from "./MainBox.module.css";
 import Login from "./Login";
 import Image from "next/image";
 import mainSectionImage from "../../../public/BackgroundImageMain.png";
-interface Props {}
+interface Props {
+  modalState: boolean;
+  modalStateHandler: (value: boolean) => void;
+}
 
 function MainBox(props: Props) {
   const [singUpModalIsOpen, setSignUpModalIsOpen] = useState(false);
-  const [loginModalIsOpen, setLoginModalIsOpen1] = useState(false);
+  const [loginModalIsOpen, setLoginModalIsOpen] = useState(false);
 
   const openModal = (value: boolean) => {
     setSignUpModalIsOpen(value);
   };
 
   const openModal1 = (value: boolean) => {
-    setLoginModalIsOpen1(value);
+    setLoginModalIsOpen(value);
   };
+
+  console.log("props.modalState", props.modalState);
+  useEffect(() => {
+    console.log(props.modalState);
+    setSignUpModalIsOpen(props.modalState);
+  }, [props.modalState]);
 
   const shimmer = (w: number, h: number) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -70,7 +79,10 @@ function MainBox(props: Props) {
           }}
           ariaHideApp={false}
           isOpen={singUpModalIsOpen}
-          onRequestClose={() => openModal(false)}
+          onRequestClose={() => {
+            openModal(false);
+            props.modalStateHandler(false);
+          }}
         >
           <Signup modalController={openModal1} />
         </Modal>
@@ -79,7 +91,8 @@ function MainBox(props: Props) {
         ariaHideApp={false}
         isOpen={loginModalIsOpen}
         onRequestClose={() => {
-          setLoginModalIsOpen1(false);
+          setLoginModalIsOpen(false);
+          props.modalStateHandler(false);
           setSignUpModalIsOpen(false);
         }}
         style={{
@@ -93,7 +106,6 @@ function MainBox(props: Props) {
       >
         <Login />
       </Modal>
-      {/* <Modal></Modal> */}
     </div>
   );
 }
