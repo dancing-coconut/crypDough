@@ -9,9 +9,8 @@
   position: relative;
 }
 .Search__box {
-  height: 40px;
-  width: 500px;
-  background-color: white;
+  height: fit-content;
+  width: fit-content;
   position: absolute;
   top: 2vh;
   right: 30vw;
