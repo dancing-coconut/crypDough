@@ -80,7 +80,7 @@ function BlogViewWrap() {
           console.log(i);
           console.log(totalBlogs[i].Blog_ID);
           //TB - you aren't doing tun tun with the other array anymore
-          router.push(`${totalBlogs[i].Blog_ID}`); 
+          router.push(`/blog/${totalBlogs[i].Blog_ID}`); 
         }
         //Check back 
       }>Go</button>

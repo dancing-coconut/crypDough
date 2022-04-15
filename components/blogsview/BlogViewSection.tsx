@@ -4,6 +4,9 @@ import CommentIcon from "@mui/icons-material/Comment";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./BlogViewSection.module.css";
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
+import { useSession } from "next-auth/react";
 interface Props {
   author: string;
   date: string;
@@ -13,6 +16,31 @@ interface Props {
   blogid: string;
 }
 function BlogViewSection(props: Props) {
+  const { data: session, status } = useSession();
+  console.log(session?.user?.email);
+  const bookmarkHandler = (event: React.FormEvent) =>{
+    event.preventDefault();
+    const post={
+      blogid: props.blogid,
+      user: session?.user?.email,
+      author: props.author,
+      title: props.blogname,
+    };
+    fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/v1/blogs/bookmark`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(post),
+    })
+    .then((response) => {
+      if (response.status === 404) {
+        console.log("error!!");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    });
+  }
   let date = new Date(
     Date.parse(props.date.substring(0, 10).replace(/[-]/g, "/"))
   );
@@ -58,8 +86,12 @@ function BlogViewSection(props: Props) {
         </Link>
       </p>
       <div className={styles["Blogopt__section"]}>
-        <BookmarksIcon className={styles["Bookmark__icon"]} />
+        <button onClick={bookmarkHandler}>
+          <BookmarksIcon className={styles["Bookmark__icon"]} />
+        </button>
         <CommentIcon className={styles["Comment__icon"]} />
+        <ThumbUpIcon className={styles["Like__icon"]} />
+        <ThumbDownAltIcon className={styles["Dislike__icon"]} />
       </div>
     </div>
   );

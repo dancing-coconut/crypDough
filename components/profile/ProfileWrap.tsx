@@ -20,7 +20,7 @@ function ProfileWrap(props:Props) {
       />
       <AboutMe />
       <MyBlogsInfo email={props.email}/>
-      <Starred />
+      <Starred email={props.email}/>
       <ProgressBar />
     </div>
   );

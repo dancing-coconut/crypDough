@@ -112,7 +112,7 @@ const Blog = (props: Blog) => {
         options={blogTitles.map((data) => data.Blog_Title)}
         onChange={(e,v) => {
           setValue(v);
-          //Value dede please aur kuch bhi kabhi bhi nhi mangugi
+          //Value dede please aur kuch bhi kabhi bhi nhi mangungi
           console.log(v);
         }}
         renderInput={(params) => (

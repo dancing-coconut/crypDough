@@ -41,6 +41,12 @@
 .Comment__icon {
   color: #5b10a8;
 }
+.Like__icon {
+  color: #5b10a8;
+}
+.Dislike__icon {
+  color: #5b10a8;
+}
 .Blog__box {
   margin: 28px;
   position: relative;
@@ -69,11 +75,21 @@
 }
 .Bookmark__icon {
   transform: scale(2);
-  margin-right: 40px;
+  margin-right: 30px;
   margin-left: 5px;
   margin-bottom: 20px;
 }
 .Comment__icon {
+  transform: scale(2);
+  margin-bottom: 20px;
+  margin-right: 30px;
+}
+.Like__icon{
+  transform: scale(2);
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+.Dislike__icon{
   transform: scale(2);
   margin-bottom: 20px;
 }
